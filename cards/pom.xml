@@ -31,7 +31,14 @@
     <properties>
         <java.version>21</java.version>
     </properties>
+
     <dependencies>
+        <dependency>
+            <groupId>com.corncrakeconsulting</groupId>
+            <artifactId>common</artifactId>
+            <version>0.0.1-SNAPSHOT</version> <!-- Or whatever version you used -->
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>

@@ -2,7 +2,6 @@ package com.corncrakeconsulting.cards.controller;
 
 import com.corncrakeconsulting.cards.constants.CardsConstants;
 import com.corncrakeconsulting.cards.dto.CardsDto;
-import com.corncrakeconsulting.cards.dto.ErrorResponseDto;
 import com.corncrakeconsulting.cards.dto.ResponseDto;
 import com.corncrakeconsulting.cards.service.ICardsService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -25,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
+import com.corncrakeconsulting.common.dto.ErrorResponseDto;
 /**
  * @author Matt Clarson
  */
