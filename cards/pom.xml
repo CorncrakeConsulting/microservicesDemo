@@ -33,6 +33,7 @@
     </properties>
 
     <dependencies>
+
         <dependency>
             <groupId>com.corncrakeconsulting</groupId>
             <artifactId>common</artifactId>

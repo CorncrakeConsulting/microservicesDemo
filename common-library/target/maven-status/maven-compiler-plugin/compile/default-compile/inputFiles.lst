@@ -1,1 +1,5 @@
+/Users/mattclarson/dev/microservicesDemo/common-library/src/main/java/com/corncrakeconsulting/common/annotations/CommonApiResponses.java
+/Users/mattclarson/dev/microservicesDemo/common-library/src/main/java/com/corncrakeconsulting/common/controller/BaseController.java
 /Users/mattclarson/dev/microservicesDemo/common-library/src/main/java/com/corncrakeconsulting/common/dto/ErrorResponseDto.java
+/Users/mattclarson/dev/microservicesDemo/common-library/src/main/java/com/corncrakeconsulting/common/dto/ResponseDto.java
+/Users/mattclarson/dev/microservicesDemo/common-library/src/main/java/com/corncrakeconsulting/common/validation/ValidMobileNumber.java
