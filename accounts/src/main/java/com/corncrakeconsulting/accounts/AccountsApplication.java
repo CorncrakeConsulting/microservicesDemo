@@ -7,10 +7,15 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {
+		"com.corncrakeconsulting.accounts",
+		"com.corncrakeconsulting.common"
+})
 @EnableJpaAuditing(auditorAwareRef = "auditAwareImpl")
-
+@EnableJpaRepositories(basePackages = "com.corncrakeconsulting.accounts.repository")
+@EntityScan(basePackages = "com.corncrakeconsulting.accounts.entity")
 @OpenAPIDefinition(
 		info = @io.swagger.v3.oas.annotations.info.Info(
 				title = "Accounts Microservice",
@@ -26,10 +31,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 				)
 		)
 )
-@EntityScan(basePackages = "com.corncrakeconsulting.accounts.entity")
 public class AccountsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AccountsApplication.class, args);
-
 	}
 }

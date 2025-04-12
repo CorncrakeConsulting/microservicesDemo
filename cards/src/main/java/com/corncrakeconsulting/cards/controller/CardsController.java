@@ -22,6 +22,7 @@ public class CardsController extends BaseController<CardsDto, ICardsService> {
     public CardsController(ICardsService iCardsService) {
         super(iCardsService);
     }
+
     @Override
     @Operation(summary = "Create Card REST API", description = "REST API to create new Card")
     @ApiResponse(responseCode = "201", description = "HTTP Status CREATED")

@@ -16,7 +16,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "CRUD REST APIs for Accounts in Bank", description = "CRUD REST APIs in Bank to CREATE, UPDATE, FETCH AND DELETE account details")
-@RequestMapping(path = "/api")
+@RequestMapping(path = "/api/accounts")
+@RestController
 public class AccountsController extends BaseController<CustomerDto, IAccountsService> {
 
     public AccountsController(IAccountsService iAccountsService) {
