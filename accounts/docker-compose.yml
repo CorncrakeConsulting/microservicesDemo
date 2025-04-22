@@ -1,0 +1,16 @@
+# Dockerfile for Account Service
+
+# ✅ Correct base image name
+FROM openjdk:22-jdk-slim
+
+# 🆗 Use LABEL instead of deprecated MAINTAINER
+LABEL maintainer="Corncrake Consulting"
+
+# ✅ Copy the JAR file into the container
+COPY target/accounts-0.0.1-SNAPSHOT.jar account-0.0.1-SNAPSHOT.jar
+
+# ✅ Set the entry point to run your application
+ENTRYPOINT ["java", "-jar", "account-0.0.1-SNAPSHOT.jar"]
+
+# ✅ Expose the app port
+EXPOSE 8080
