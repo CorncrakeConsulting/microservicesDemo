@@ -1,5 +1,6 @@
 package com.corncrakeconsulting.accounts.entity;
 
+import com.corncrakeconsulting.common.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 

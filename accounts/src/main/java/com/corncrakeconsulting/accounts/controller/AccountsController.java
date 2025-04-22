@@ -13,7 +13,14 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @Tag(name = "CRUD REST APIs for Accounts in Bank", description = "CRUD REST APIs in Bank to CREATE, UPDATE, FETCH AND DELETE account details")
 @RequestMapping(path = "/api/accounts")
@@ -31,8 +38,7 @@ public class AccountsController extends BaseController<CustomerDto, IAccountsSer
     @PostMapping("/create")
     public ResponseEntity<ResponseDto> create(@Valid @RequestBody CustomerDto customerDto) {
         String accountNumber = service.createAccount(customerDto);
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(new ResponseDto(AccountsConstants.STATUS_201, AccountsConstants.MESSAGE_201 + " " + accountNumber));
+        return ResponseEntity.status(HttpStatus.CREATED).body(new ResponseDto(AccountsConstants.STATUS_201, AccountsConstants.MESSAGE_201 + " " + accountNumber));
     }
 
     @Override
@@ -51,8 +57,7 @@ public class AccountsController extends BaseController<CustomerDto, IAccountsSer
     @PutMapping("/update")
     public ResponseEntity<ResponseDto> update(@Valid @RequestBody CustomerDto customerDto) {
         boolean isUpdated = service.updateAccount(customerDto);
-        return buildResponse(isUpdated, AccountsConstants.STATUS_200, AccountsConstants.MESSAGE_200,
-                AccountsConstants.STATUS_417, AccountsConstants.MESSAGE_417_UPDATE);
+        return buildResponse(isUpdated, AccountsConstants.STATUS_200, AccountsConstants.MESSAGE_200, AccountsConstants.STATUS_417, AccountsConstants.MESSAGE_417_UPDATE);
     }
 
     @Override
@@ -62,7 +67,6 @@ public class AccountsController extends BaseController<CustomerDto, IAccountsSer
     @DeleteMapping("/delete")
     public ResponseEntity<ResponseDto> delete(@RequestParam @ValidMobileNumber String mobileNumber) {
         boolean isDeleted = service.deleteAccount(mobileNumber);
-        return buildResponse(isDeleted, AccountsConstants.STATUS_200, AccountsConstants.MESSAGE_200,
-                AccountsConstants.STATUS_417, AccountsConstants.MESSAGE_417_DELETE);
+        return buildResponse(isDeleted, AccountsConstants.STATUS_200, AccountsConstants.MESSAGE_200, AccountsConstants.STATUS_417, AccountsConstants.MESSAGE_417_DELETE);
     }
 }

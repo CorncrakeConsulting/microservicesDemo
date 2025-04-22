@@ -1,4 +1,4 @@
-package com.corncrakeconsulting.accounts.entity;
+package com.corncrakeconsulting.common.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
